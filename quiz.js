@@ -6,30 +6,22 @@ function getUserValues() {
   var treeHeight = userTreeHeight.value;
   var treeChar = userTreeCharacter.value;
   // console.log("height will be:",treeHeight,"character will be:",treeChar);
-  checkValues(treeHeight,treeChar);
-}
-
-
-
-// If either of the input fields does not have a value in it when the user presses the enter key, or presses the button,
-// then display an alert stating that both fields must have a value.
-function checkValues(treeHeight,treeChar) {
-  if(!treeHeight || !treeChar) {
-    alert("Please enter a desired height AND character type");
-  } else {
-    buildTreeObject(treeHeight, treeChar);
-  }
-}
-
-
-// It accepts a single object as an argument. The object should have two key/value pairs.*/
-function buildTreeObject(treeHeight,treeChar) {
   var treeObject = {
     h: treeHeight,
     c: treeChar
   }
-  // console.log("object height:",treeObject.h,"tree object char:",treeObject.c);
-  growTreeObject(treeObject);
+
+  checkValues(treeObject);
+}
+
+// If either of the input fields does not have a value in it when the user presses the enter key, or presses the button,
+// then display an alert stating that both fields must have a value.
+function checkValues(treeObject) {
+  if(!treeObject.h || !treeObject.c) {
+    alert("Please enter a desired height AND character type");
+  } else {
+    growTreeObject(treeObject);
+  }
 }
 
 // Create a tree function that should build a pine tree out of a character in the Chrome dev tools console.
